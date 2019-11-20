@@ -31,3 +31,4 @@ jobs:
       run: make check
       env:
         LD_LIBRARY_PATH: ${{ github.workspace }}/lib
+        QT_QPA_PLATFORM: offscreen
