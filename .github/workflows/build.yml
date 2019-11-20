@@ -30,4 +30,4 @@ jobs:
     - name: make check
       run: make check
       env:
-        LD_LIBRARY_PATH: $GITHUB_WORKSPACE/lib
+        LD_LIBRARY_PATH: ${{PWD}}/lib
