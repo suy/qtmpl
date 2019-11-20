@@ -17,7 +17,17 @@ jobs:
       run: qmake
     - name: make
       run: make
+    - name: Debug env 1
+      run: echo $PWD
+    - name: Debug env 2
+      run: echo $GITHUB_WORKSPACE
+    - name: Debug env 3
+      run: echo $LD_LIBRARY_PATH
+      env:
+        LD_LIBRARY_PATH: $GITHUB_WORKSPACE/lib
+    - name: Debug env 4
+      run: echo $LD_LIBRARY_PATH
     - name: make check
       run: make check
       env:
-        LD_LIBRARY_PATH: $PWD/lib
+        LD_LIBRARY_PATH: $GITHUB_WORKSPACE/lib
