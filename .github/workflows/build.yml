@@ -12,7 +12,7 @@ jobs:
     - name: Install Qt
       uses: jurplel/install-qt-action@v2.0.0
     - name: Install other dependencies
-      run: apt install libgl1-mesa-dev
+      run: sudo apt-get install libgl1-mesa-dev
     - name: configure
       run: qmake
     - name: make
