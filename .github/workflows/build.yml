@@ -26,8 +26,8 @@ jobs:
     - name: Debug env 4
       run: echo $LD_LIBRARY_PATH
       env:
-        LD_LIBRARY_PATH: ${{ $GITHUB_WORKSPACE }}/lib
+        LD_LIBRARY_PATH: ${{ github.workspace }}/lib
     - name: make check
       run: make check
       env:
-        LD_LIBRARY_PATH: ${{ $GITHUB_WORKSPACE }}/lib
+        LD_LIBRARY_PATH: ${{ github.workspace }}/lib
