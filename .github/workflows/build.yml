@@ -1,0 +1,24 @@
+name: Qt CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2.0.0
+    - name: Install other dependencies
+      run: sudo apt-get install libgl1-mesa-dev
+    - name: configure
+      run: qmake
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+      env:
+        LD_LIBRARY_PATH: ${{ github.workspace }}/lib
+        QT_QPA_PLATFORM: offscreen
